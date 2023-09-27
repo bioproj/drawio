@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>宏基因组数据分析</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css"> -->
+  <link rel="stylesheet" href="css/vue.css">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="favicon.ico">
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- <script src="js/docsify-edit-on-github.js"></script> -->
+  <script src="js/docsify-plugin-carbon@1.js"></script>
+  <script>
+    let editUrl = ""
+    if (window.location.host == "bioproj.gitee.io") {
+      editUrl = "https://gitee.com/bioproj/metagenomics/blob/master/docs/"
+    } else {
+      editUrl = "https://github.com/bioproj/metagenomics/blob/master/docs/"
+    }
+  </script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1"></script> -->
+  <script>
+    window.$docsify = {
+      name: '宏基因组数据分析',
+      loadSidebar: true,
+      loadSidebar: "sidebar.md",
+      subMaxLevel: 3,
+      formatUpdated: '{YYYY}-{MM}-{DD}',
+      topMargin: 0,
+      requestHeaders: {
+        'cache-control': 'max-age=0',
+      },
+      // repo: 'http://192.168.10.178:3000/mbiolance-it/admin-doc/',
+      alias: {
+        '/.*/sidebar.md': '/sidebar.md'
+      }, plugins: [
+        // DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            // console.log( vm.route.file)
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/master/, '/blob/master');
+            } else if (/jsdelivr\.net/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('cdn.jsdelivr.net/gh', 'github.com')
+                .replace('@master', '/blob/master');
+            } else if (/github\.githubassets\.com/.test(vm.route.file)) {
+              console.log(vm.route.file)
+              url = vm.route.file
+                .replace('cdn.jsdelivr.net/gh', 'github.com')
+                .replace('@master', '/blob/master');
+            } else {
+              url =
+                editUrl +
+                vm.route.file;
+            }
+            var editHtml = '[:memo: Edit Document](' + url + ')\n\n';
+            return (
+              editHtml +
+              html +
+              '\n\n----\n\n' +
+              '<a href="https://bioinfo.online" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by 生信小木屋</a>'
+            );
+
+
+          });
+        },
+        // EditOnGithubPlugin.create(
+        //   'http://192.168.10.178:3000/mbiolance-it/admin-doc/src/branch/master/',
+        //   null,
+        //   function (file) {
+        //     if (file.indexOf('en') === -1) {
+        //       return '<span>编辑</sapn>'
+        //     } else {
+        //       return 'edit on git'
+        //     }
+        //   }
+        // )
+      ]
+    }
+  </script>
+
+  <!--  &lt;!&ndash; CDN files for docsify-katex &ndash;&gt;-->
+  <script src="js/katex.min.js"></script>
+  <link rel="stylesheet" href="css/katex.min.css" />
+  <script src="js/marked@3.js"></script>
+  <script src="js/docsify-katex.js"></script>
+  <script>
+    baseURL = "https://github.githubassets.com/images/icons/emoji/"
+    baseURL = ""
+  </script>
+  <script src="js/docsify.min.js"></script>
+
+
+  <!-- CDN files for docsify-katex -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@3"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
+   -->
+  <!-- 评论插件的应用 -->
+  <!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '02724a2355f93ed58315',
+      clientSecret: '014380e0fb7bfa7beea3385328d29e7dc9c46f99',
+      repo: 'LeeML-Notes',
+      owner: 'datawhalechina',
+      admin: ['datawhalechina','Spareribs'],
+      title: location.hash.match(/#(.*?)([?]|$)/)[1],
+      id: location.hash.match(/#(.*?)([?]|$)/)[1],
+      distractionFreeMode: false // facebook-like distraction free mode
+    })
+	// 监听URL中hash的变化，如果发现换了一个MD文件，那么刷新页面，解决整个网站使用一个gitalk评论issues的问题。
+    window.onhashchange = function(event){
+      if(event.newURL.split('?')[0] !== event.oldURL .split('?')[0]) {
+        location.reload()
+      }
+    }
+  </script> -->
+</body>
+
+</html>
