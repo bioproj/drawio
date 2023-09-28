@@ -1,7 +1,7 @@
 
 - Table of Contents
- - [菌株分析](chapter1/chapter1.md)
-
+ - [分析软件](chapter1/chapter1.md)
+ - [分析算法](chapter2/chapter2.md)
 
 
 
