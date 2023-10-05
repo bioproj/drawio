@@ -155,13 +155,14 @@ statswrapper.sh \
   dvh_spades/*.fasta \
   tadpole_contigs.fasta > dvh_stats.txt
 ```
-```
-n_scaffolds	n_contigs	scaf_bp	contig_bp	gap_pct	scaf_N50	scaf_L50	ctg_N50	ctg_L50	scaf_N90	scaf_L90	ctg_N90	ctg_L90	scaf_max	ctg_max	scaf_n_gt50K	scaf_pct_gt50K	gc_avg	gc_std	filename
-215	215	3742024	3742024	0.000	14	88810	14	88810	45	19130	45	19130	284425	284425	27	74.346	0.63322	0.05737	/workspaces/topic-metagenomics/data2/dvh_spades/before_rr.fasta
-105	105	3742672	3742672	0.000	9	165421	9	165421	22	52191	22	52191	285836	285836	22	90.559	0.63321	0.05773	/workspaces/topic-metagenomics/data2/dvh_spades/contigs.fasta
-99	105	3743107	3742672	0.012	8	168161	9	165421	20	52191	22	52191	408455	285836	20	90.552	0.63321	0.05884	/workspaces/topic-metagenomics/data2/dvh_spades/scaffolds.fasta
-172	172	52664	52664	0.000	71	271	71	271	153	252	153	252	3188	3188	0	0.000	0.61376	0.05661	/workspaces/topic-metagenomics/data2/tadpole_contigs.fasta
-```
+
+| n_scaffolds | n_contigs | scaf_bp | contig_bp | gap_pct | scaf_N50 | scaf_L50 | ctg_N50 | ctg_L50 | scaf_N90 | scaf_L90 | ctg_N90 | ctg_L90 | scaf_max | ctg_max | scaf_n_gt50K | scaf_pct_gt50K | gc_avg  | gc_std  | filename                                                        |
+| ----------- | --------- | ------- | --------- | ------- | -------- | -------- | ------- | ------- | -------- | -------- | ------- | ------- | -------- | ------- | ------------ | -------------- | ------- | ------- | --------------------------------------------------------------- |
+| 215         | 215       | 3742024 | 3742024   | 0.000   | 14       | 88810    | 14      | 88810   | 45       | 19130    | 45      | 19130   | 284425   | 284425  | 27           | 74.346         | 0.63322 | 0.05737 | /workspaces/topic-metagenomics/data2/dvh_spades/before_rr.fasta |
+| 105         | 105       | 3742672 | 3742672   | 0.000   | 9        | 165421   | 9       | 165421  | 22       | 52191    | 22      | 52191   | 285836   | 285836  | 22           | 90.559         | 0.63321 | 0.05773 | /workspaces/topic-metagenomics/data2/dvh_spades/contigs.fasta   |
+| 99          | 105       | 3743107 | 3742672   | 0.012   | 8        | 168161   | 9       | 165421  | 20       | 52191    | 22      | 52191   | 408455   | 285836  | 20           | 90.552         | 0.63321 | 0.05884 | /workspaces/topic-metagenomics/data2/dvh_spades/scaffolds.fasta |
+| 172         | 172       | 52664   | 52664     | 0.000   | 71       | 271      | 71      | 271     | 153      | 252      | 153     | 252     | 3188     | 3188    | 0            | 0.000          | 0.61376 | 0.05661 | /workspaces/topic-metagenomics/data2/tadpole_contigs.fasta      |
+
 
 完整代码
 ```bash
