@@ -14,3 +14,9 @@
 
 
 ![](figures/metagenomics.drawio.svg)
+
+
+
+#### 宏基因组组装软件SPAdes与MEGAHIT之间的区别？
+
+ I’ve had really good results with **SPAdes** for isolate or enrichment cultures when I’m trying to reconstruct just one or a few genomes. But when working with high diversity metagenomic samples, sometimes SPAdes can’t handle it and **MEGAHIT** is pretty awesome with how well it does with such a small memory footprint – and it’s insanely fast.[De novo genome assembly](https://astrobiomike.github.io/genomics/de_novo_assembly)
